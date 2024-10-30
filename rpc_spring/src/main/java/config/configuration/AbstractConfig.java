@@ -1,4 +1,4 @@
-package config;
+package config.configuration;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

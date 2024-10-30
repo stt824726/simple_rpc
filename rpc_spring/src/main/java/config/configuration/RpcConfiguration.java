@@ -1,4 +1,4 @@
-package config;
+package config.configuration;
 
 /**
  * @description: rpc配置类

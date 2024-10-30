@@ -1,6 +1,7 @@
-package config;
+package config.configuration;
 
 
+import config.configuration.ConfigurationRegistrar;
 import org.springframework.context.annotation.Import;
 
 import java.lang.annotation.*;

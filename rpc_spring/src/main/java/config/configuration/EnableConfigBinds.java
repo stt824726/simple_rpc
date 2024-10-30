@@ -1,4 +1,6 @@
-package config;
+package config.configuration;
+
+import config.configuration.AbstractConfig;
 
 import java.lang.annotation.*;
 

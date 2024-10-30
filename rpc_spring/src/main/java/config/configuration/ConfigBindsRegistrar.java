@@ -1,4 +1,4 @@
-package config;
+package config.configuration;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -6,6 +6,7 @@ import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.context.EnvironmentAware;
 import org.springframework.context.annotation.ImportBeanDefinitionRegistrar;
 import org.springframework.core.annotation.AnnotationAttributes;
+import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.core.env.Environment;
 import org.springframework.core.type.AnnotationMetadata;
 
@@ -19,9 +20,11 @@ public class ConfigBindsRegistrar implements ImportBeanDefinitionRegistrar, Envi
 
     private final Log log = LogFactory.getLog(getClass());
 
+    private ConfigurableEnvironment environment;
+
     @Override
     public void setEnvironment(Environment environment) {
-
+        this.environment = (ConfigurableEnvironment) environment;
     }
 
     @Override
@@ -29,6 +32,7 @@ public class ConfigBindsRegistrar implements ImportBeanDefinitionRegistrar, Envi
         AnnotationAttributes attributes = AnnotationAttributes.fromMap(
                 annotationMetadata.getAnnotationAttributes(EnableConfigBinds.class.getName()));
 
+        AnnotationAttributes[] annotationAttributes = attributes.getAnnotationArray("value");
 
     }
 }
